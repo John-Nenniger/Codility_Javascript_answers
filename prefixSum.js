@@ -1,4 +1,4 @@
-let sampleArray = [4,2,2,5,1,5,8];
+let sampleArray = [14,21,45,6,34,1,400,1,4,1]
 
 function prefix(arr){
   let leng = arr.length;
