@@ -6,8 +6,8 @@ function solution(A) {
     const leng = A.length;
     let lowest_average = 100000000;
     let returnable_position;
-    for (let i=0;i<leng;i++){
-        for (let j=i+2;j<leng;j++){
+    for (let i=0;i<leng-1;i++){
+        for (let j=i+2;j<=leng;j++){
             let current_slice = A.slice(i, j)
             let sum = current_slice.reduce((a,b) => a+=b);
             let current_average = sum/current_slice.length;
@@ -15,7 +15,7 @@ function solution(A) {
                 returnable_position = i;
                 lowest_average = current_average;
                 }
-            console.log(`${current_slice} ${sum} ${current_average} ${lowest_average}`)
+              console.log(`${current_slice} ${sum} ${current_average} ${lowest_average}`)
             }
         }
     return returnable_position
