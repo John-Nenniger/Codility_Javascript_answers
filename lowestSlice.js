@@ -20,3 +20,25 @@ function solution(A) {
         }
     return returnable_position
 }
+
+// slightly improved
+
+function solution(A) {
+    //   with 2 for loops to start, it will be too slow bu that's okay
+    const leng = A.length;
+    let lowest_average = 100000000;
+    let returnable_position;
+    for (let i=0;i<leng-1;i++){
+        for (let j=i+2;j<=leng;j++){
+            if (A[j-1]>A[j]) {continue}
+            let current_slice = A.slice(i, j)
+            let sum = current_slice.reduce((a,b) => a+=b);
+            let current_average = sum/current_slice.length;
+            if (current_average < lowest_average){
+                returnable_position = i;
+                lowest_average = current_average;
+                }
+            }
+        }
+    return returnable_position
+}
