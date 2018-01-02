@@ -26,3 +26,6 @@ function solution(A, B) {
         }
     return fish_count;
 }
+
+// this only got 25% :(
+// it's both too slow and incorrect
